@@ -10,7 +10,7 @@
 - 🏋️‍♂️ I also believe in staying active and love hitting the gym.
 
 ### 🌍 Socials
-[LinkedIn](https://www.linkedin.com/in/vineethkumar-mudham/) | [Instagram](https://www.instagram.com/vineeth_kumar_patel/)
+[LinkedIn](https://www.linkedin.com/in/vineethkumar-mudham/) |[Portfolio](https://vineeth-kumar-portfolio.netlify.app/)| [Instagram](https://www.instagram.com/vineeth_kumar_patel/)
 
 ### 🛠️ Tech Stack
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
