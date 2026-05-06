@@ -6,10 +6,10 @@
 
 ### 💻 About Me
 - 🌐 I'm a passionate **Full Stack Developer** with experience in building dynamic and responsive web applications.
-- 🎯 Skilled in **Frontend** (React, HTML, CSS, JavaScript) and **Backend** (Java, Spring Boot, MySQL).
+- 🎯 Skilled in **Frontend** (React, HTML, CSS, JavaScript) and **Backend** (Java, Spring Boot,Node.Js,MySQL).
 - 📚 Currently exploring **cloud integration** and scalable backend solutions.
 - 🤝 Open to **collaborations**, side projects, and hackathons.
-- 💬 Ask me about `Java`, `React`, `Spring Boot`, or anything web-related.
+- 💬 Ask me about `Java`, `React`, `Spring Boot`,`Node.js` or anything web-related.
 - 🏏 In my free time, I enjoy **playing cricket**, **watching movies**, and **traveling**.
 - 🏋️‍♂️ Fitness is part of my daily routine – I enjoy **hitting the gym**.
 
