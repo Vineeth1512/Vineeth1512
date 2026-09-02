@@ -10,7 +10,7 @@ if (!username || !token) {
 const headers = {
   Authorization: `Bearer ${token}`,
   Accept: "application/vnd.github+json",
-  "User-Agent": "Vineeth1512-terminal-profile"
+  "User-Agent": "Vineeth1512-terminal-profile",
 };
 
 async function github(url) {
@@ -25,6 +25,33 @@ async function github(url) {
   return response.json();
 }
 
+/* =========================================================
+   DOWNLOAD GITHUB AVATAR
+========================================================= */
+
+async function downloadAvatar(url) {
+  const response = await fetch(url, {
+    headers: {
+      "User-Agent": "Vineeth1512-terminal-profile",
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Avatar download failed: ${response.status}`);
+  }
+
+  const contentType =
+    response.headers.get("content-type") || "image/jpeg";
+
+  const buffer = Buffer.from(await response.arrayBuffer());
+
+  return `data:${contentType};base64,${buffer.toString("base64")}`;
+}
+
+/* =========================================================
+   ESCAPE XML
+========================================================= */
+
 function escapeXml(value = "") {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -34,43 +61,54 @@ function escapeXml(value = "") {
     .replaceAll("'", "&apos;");
 }
 
-/* --------------------------------
-   GET GITHUB PROFILE
--------------------------------- */
+function clean(value = "", max = 70) {
+  return escapeXml(
+    String(value)
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, max)
+  );
+}
+
+/* =========================================================
+   GET PROFILE
+========================================================= */
 
 const profile = await github(
   `https://api.github.com/users/${username}`
 );
 
-/* --------------------------------
+/* =========================================================
    GET REPOSITORIES
--------------------------------- */
+========================================================= */
 
 const repos = await github(
   `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`
 );
 
-/* --------------------------------
+/* =========================================================
    CALCULATE STARS
--------------------------------- */
+========================================================= */
 
 const totalStars = repos.reduce(
-  (total, repo) => total + repo.stargazers_count,
+  (total, repo) =>
+    total + (repo.stargazers_count || 0),
   0
 );
 
-/* --------------------------------
+/* =========================================================
    CALCULATE FORKS
--------------------------------- */
+========================================================= */
 
 const totalForks = repos.reduce(
-  (total, repo) => total + repo.forks_count,
+  (total, repo) =>
+    total + (repo.forks_count || 0),
   0
 );
 
-/* --------------------------------
-   TOP LANGUAGES
--------------------------------- */
+/* =========================================================
+   CALCULATE LANGUAGES
+========================================================= */
 
 const languageCount = {};
 
@@ -81,690 +119,932 @@ for (const repo of repos) {
     (languageCount[repo.language] || 0) + 1;
 }
 
-const topLanguages = Object.entries(languageCount)
+const languages = Object.entries(languageCount)
   .sort((a, b) => b[1] - a[1])
-  .slice(0, 5)
-  .map(([language]) => language)
-  .join(" • ");
+  .slice(0, 6)
+  .map(([language]) => language);
 
-/* --------------------------------
+/* =========================================================
    PROFILE DATA
--------------------------------- */
+========================================================= */
 
 const name = profile.name || username;
 
 const bio =
   profile.bio ||
-  "Full Stack Developer building scalable web applications.";
+  "Full Stack Developer building modern web applications.";
 
 const location =
   profile.location ||
   "India";
 
-const publicRepos =
-  profile.public_repos ?? 0;
+const repositories =
+  profile.public_repos || 0;
 
 const followers =
-  profile.followers ?? 0;
+  profile.followers || 0;
 
 const following =
-  profile.following ?? 0;
+  profile.following || 0;
 
-const avatar =
-  profile.avatar_url || "";
+/* =========================================================
+   GET AVATAR
+========================================================= */
 
-/* --------------------------------
-   SVG CONFIGURATION
--------------------------------- */
+const avatar = await downloadAvatar(
+  profile.avatar_url
+);
+
+/* =========================================================
+   SVG CONFIG
+========================================================= */
 
 const WIDTH = 1200;
-const HEIGHT = 650;
+const HEIGHT = 610;
+
+/* =========================================================
+   SVG
+========================================================= */
 
 const svg = `
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
   width="${WIDTH}"
   height="${HEIGHT}"
   viewBox="0 0 ${WIDTH} ${HEIGHT}"
 >
 
-  <defs>
+<defs>
 
-    <filter id="glow">
-      <feGaussianBlur
-        stdDeviation="3"
-        result="blur"
+  <!-- Main border -->
+  <linearGradient
+    id="borderGradient"
+    x1="0"
+    y1="0"
+    x2="1"
+    y2="1"
+  >
+    <stop
+      offset="0%"
+      stop-color="#00ffff"
+    />
+
+    <stop
+      offset="50%"
+      stop-color="#00ff9c"
+    />
+
+    <stop
+      offset="100%"
+      stop-color="#7047ff"
+    />
+  </linearGradient>
+
+
+  <!-- Panel -->
+  <linearGradient
+    id="panelGradient"
+    x1="0"
+    y1="0"
+    x2="1"
+    y2="1"
+  >
+
+    <stop
+      offset="0%"
+      stop-color="#07101d"
+    />
+
+    <stop
+      offset="100%"
+      stop-color="#030812"
+    />
+
+  </linearGradient>
+
+
+  <!-- Avatar filter -->
+  <filter
+    id="avatarFilter"
+    x="-20%"
+    y="-20%"
+    width="140%"
+    height="140%"
+  >
+
+    <feColorMatrix
+      type="matrix"
+      values="
+        0.40 0.40 0.20 0 0
+        0.40 0.40 0.20 0 0
+        0.40 0.40 0.20 0 0
+        0    0    0    1 0
+      "
+    />
+
+  </filter>
+
+
+  <!-- Glow -->
+  <filter
+    id="glow"
+    x="-50%"
+    y="-50%"
+    width="200%"
+    height="200%"
+  >
+
+    <feGaussianBlur
+      stdDeviation="2"
+      result="blur"
+    />
+
+    <feMerge>
+
+      <feMergeNode
+        in="blur"
       />
 
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+      <feMergeNode
+        in="SourceGraphic"
+      />
 
-    <linearGradient
-      id="border"
-      x1="0"
-      y1="0"
-      x2="1"
-      y2="1"
-    >
-      <stop offset="0%" stop-color="#00ffff"/>
-      <stop offset="50%" stop-color="#00ff9c"/>
-      <stop offset="100%" stop-color="#7c3aed"/>
-    </linearGradient>
+    </feMerge>
 
-  </defs>
+  </filter>
 
 
-  <!-- BACKGROUND -->
-
-  <rect
-    width="100%"
-    height="100%"
-    rx="22"
-    fill="#050912"
-  />
-
-  <rect
-    x="3"
-    y="3"
-    width="${WIDTH - 6}"
-    height="${HEIGHT - 6}"
-    rx="20"
-    fill="none"
-    stroke="url(#border)"
-    stroke-width="2"
-  />
-
-
-  <!-- TERMINAL HEADER -->
-
-  <circle
-    cx="32"
-    cy="30"
-    r="8"
-    fill="#ff5f56"
-  />
-
-  <circle
-    cx="56"
-    cy="30"
-    r="8"
-    fill="#ffbd2e"
-  />
-
-  <circle
-    cx="80"
-    cy="30"
-    r="8"
-    fill="#27c93f"
-  />
-
-  <text
-    x="430"
-    y="37"
-    text-anchor="middle"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="18"
-    font-weight="bold"
+  <!-- Scanlines -->
+  <pattern
+    id="scanlines"
+    width="4"
+    height="8"
+    patternUnits="userSpaceOnUse"
   >
-    terminal@${escapeXml(username)}:~$ ./profile --live
-  </text>
 
-  <text
-    x="1135"
-    y="37"
-    text-anchor="end"
-    fill="#ff4fd8"
-    font-family="monospace"
-    font-size="15"
-    font-weight="bold"
-  >
-    [ ONLINE ]
-  </text>
-
-
-  <!-- LEFT PANEL -->
-
-  <rect
-    x="25"
-    y="65"
-    width="420"
-    height="450"
-    rx="14"
-    fill="#07101c"
-    stroke="#00c9d9"
-    stroke-width="1"
-  />
-
-  <text
-    x="45"
-    y="95"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="17"
-    font-weight="bold"
-  >
-    &gt; DEVELOPER.PROFILE
-  </text>
-
-
-  <!-- AVATAR -->
-
-  <rect
-    x="55"
-    y="120"
-    width="360"
-    height="250"
-    rx="10"
-    fill="#02060c"
-    stroke="#164e63"
-  />
-
-  <image
-    href="${escapeXml(avatar)}"
-    x="135"
-    y="130"
-    width="200"
-    height="200"
-    preserveAspectRatio="xMidYMid slice"
-  />
-
-  <text
-    x="235"
-    y="350"
-    text-anchor="middle"
-    fill="#00ffff"
-    font-family="monospace"
-    font-size="15"
-  >
-    &gt; ${escapeXml(username)}_
-  </text>
-
-
-  <!-- LEFT BOTTOM -->
-
-  <line
-    x1="45"
-    y1="395"
-    x2="425"
-    y2="395"
-    stroke="#164e63"
-  />
-
-  <text
-    x="45"
-    y="425"
-    fill="#7dd3fc"
-    font-family="monospace"
-    font-size="14"
-  >
-    &gt; STATUS
-  </text>
-
-  <text
-    x="45"
-    y="450"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="14"
-  >
-    ● BUILDING • LEARNING • GROWING
-  </text>
-
-  <text
-    x="45"
-    y="480"
-    fill="#94a3b8"
-    font-family="monospace"
-    font-size="13"
-  >
-    ${escapeXml(bio).slice(0, 48)}
-  </text>
-
-
-  <!-- RIGHT PANEL -->
-
-  <rect
-    x="465"
-    y="65"
-    width="710"
-    height="450"
-    rx="14"
-    fill="#07101c"
-    stroke="#00c9d9"
-    stroke-width="1"
-  />
-
-  <text
-    x="490"
-    y="95"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="17"
-    font-weight="bold"
-  >
-    &gt; PROFILE.INFO
-  </text>
-
-
-  <!-- NAME -->
-
-  <text
-    x="490"
-    y="130"
-    fill="#39ff88"
-    font-family="monospace"
-    font-size="28"
-    font-weight="bold"
-  >
-    ${escapeXml(name)}
-  </text>
-
-  <text
-    x="490"
-    y="158"
-    fill="#dbeafe"
-    font-family="monospace"
-    font-size="17"
-  >
-    Full Stack Developer
-    <tspan fill="#00ff9c"> █</tspan>
-  </text>
-
-
-  <line
-    x1="490"
-    y1="175"
-    x2="1145"
-    y2="175"
-    stroke="#155e75"
-  />
-
-
-  <!-- PROFILE INFORMATION -->
-
-  <text
-    x="490"
-    y="205"
-    fill="#22d3ee"
-    font-family="monospace"
-    font-size="14"
-  >
-    Username
-  </text>
-
-  <text
-    x="650"
-    y="205"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : ${escapeXml(username)}
-  </text>
-
-
-  <text
-    x="490"
-    y="230"
-    fill="#22d3ee"
-    font-family="monospace"
-    font-size="14"
-  >
-    Location
-  </text>
-
-  <text
-    x="650"
-    y="230"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : ${escapeXml(location)}
-  </text>
-
-
-  <text
-    x="490"
-    y="255"
-    fill="#22d3ee"
-    font-family="monospace"
-    font-size="14"
-  >
-    Repositories
-  </text>
-
-  <text
-    x="650"
-    y="255"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : ${publicRepos}
-  </text>
-
-
-  <text
-    x="490"
-    y="280"
-    fill="#22d3ee"
-    font-family="monospace"
-    font-size="14"
-  >
-    Followers
-  </text>
-
-  <text
-    x="650"
-    y="280"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : ${followers}
-  </text>
-
-
-  <text
-    x="490"
-    y="305"
-    fill="#22d3ee"
-    font-family="monospace"
-    font-size="14"
-  >
-    Following
-  </text>
-
-  <text
-    x="650"
-    y="305"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : ${following}
-  </text>
-
-
-  <!-- TECH STACK -->
-
-  <line
-    x1="490"
-    y1="330"
-    x2="1145"
-    y2="330"
-    stroke="#155e75"
-  />
-
-  <text
-    x="490"
-    y="355"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="16"
-    font-weight="bold"
-  >
-    &gt; TECH.STACK
-  </text>
-
-
-  <text
-    x="490"
-    y="385"
-    fill="#c084fc"
-    font-family="monospace"
-    font-size="14"
-  >
-    Frontend
-  </text>
-
-  <text
-    x="650"
-    y="385"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : React • JavaScript • HTML • CSS
-  </text>
-
-
-  <text
-    x="490"
-    y="410"
-    fill="#c084fc"
-    font-family="monospace"
-    font-size="14"
-  >
-    Backend
-  </text>
-
-  <text
-    x="650"
-    y="410"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : Java • Spring Boot • Node.js
-  </text>
-
-
-  <text
-    x="490"
-    y="435"
-    fill="#c084fc"
-    font-family="monospace"
-    font-size="14"
-  >
-    Database
-  </text>
-
-  <text
-    x="650"
-    y="435"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : MongoDB • MySQL • Firebase
-  </text>
-
-
-  <text
-    x="490"
-    y="460"
-    fill="#c084fc"
-    font-family="monospace"
-    font-size="14"
-  >
-    Languages
-  </text>
-
-  <text
-    x="650"
-    y="460"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : ${escapeXml(topLanguages || "JavaScript • Java")}
-  </text>
-
-
-  <text
-    x="490"
-    y="490"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="13"
-  >
-    $ ${escapeXml(bio).slice(0, 75)}
-  </text>
-
-
-  <!-- LIVE STATS -->
-
-  <rect
-    x="25"
-    y="535"
-    width="1150"
-    height="90"
-    rx="14"
-    fill="#07101c"
-    stroke="#00ff9c"
-    stroke-width="1"
-  />
-
-  <text
-    x="45"
-    y="562"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="15"
-    font-weight="bold"
-  >
-    &gt; LIVE.STATS
-  </text>
-
-
-  <text
-    x="85"
-    y="595"
-    fill="#a855f7"
-    font-family="monospace"
-    font-size="13"
-  >
-    REPOSITORIES
-  </text>
-
-  <text
-    x="85"
-    y="615"
-    fill="#ffffff"
-    font-family="monospace"
-    font-size="18"
-    font-weight="bold"
-  >
-    ${publicRepos}
-  </text>
-
-
-  <text
-    x="320"
-    y="595"
-    fill="#22d3ee"
-    font-family="monospace"
-    font-size="13"
-  >
-    FOLLOWERS
-  </text>
-
-  <text
-    x="320"
-    y="615"
-    fill="#ffffff"
-    font-family="monospace"
-    font-size="18"
-    font-weight="bold"
-  >
-    ${followers}
-  </text>
-
-
-  <text
-    x="555"
-    y="595"
-    fill="#facc15"
-    font-family="monospace"
-    font-size="13"
-  >
-    STARS
-  </text>
-
-  <text
-    x="555"
-    y="615"
-    fill="#ffffff"
-    font-family="monospace"
-    font-size="18"
-    font-weight="bold"
-  >
-    ${totalStars}
-  </text>
-
-
-  <text
-    x="760"
-    y="595"
-    fill="#39ff88"
-    font-family="monospace"
-    font-size="13"
-  >
-    FORKS
-  </text>
-
-  <text
-    x="760"
-    y="615"
-    fill="#ffffff"
-    font-family="monospace"
-    font-size="18"
-    font-weight="bold"
-  >
-    ${totalForks}
-  </text>
-
-
-  <text
-    x="960"
-    y="595"
-    fill="#ff4d4d"
-    font-family="monospace"
-    font-size="13"
-  >
-    STATUS
-  </text>
-
-  <text
-    x="960"
-    y="615"
-    fill="#39ff88"
-    font-family="monospace"
-    font-size="18"
-    font-weight="bold"
-  >
-    ACTIVE
-  </text>
-
-
-  <!-- CURSOR ANIMATION -->
-
-  <rect
-    x="1135"
-    y="486"
-    width="8"
-    height="15"
-    fill="#00ff9c"
-  >
-    <animate
-      attributeName="opacity"
-      values="1;0;1"
-      dur="1s"
-      repeatCount="indefinite"
+    <rect
+      width="4"
+      height="2"
+      fill="#00ffff"
+      opacity="0.15"
     />
-  </rect>
+
+  </pattern>
+
+
+  <!-- Dot matrix -->
+  <pattern
+    id="dots"
+    width="7"
+    height="7"
+    patternUnits="userSpaceOnUse"
+  >
+
+    <circle
+      cx="2"
+      cy="2"
+      r="1"
+      fill="#00ffff"
+      opacity="0.25"
+    />
+
+  </pattern>
+
+
+  <!-- Avatar clip -->
+  <clipPath
+    id="avatarClip"
+  >
+
+    <rect
+      x="60"
+      y="95"
+      width="390"
+      height="320"
+      rx="10"
+    />
+
+  </clipPath>
+
+</defs>
+
+
+<!-- =====================================================
+     BACKGROUND
+====================================================== -->
+
+<rect
+  x="0"
+  y="0"
+  width="${WIDTH}"
+  height="${HEIGHT}"
+  rx="20"
+  fill="#02060d"
+/>
+
+
+<!-- Outer border -->
+
+<rect
+  x="3"
+  y="3"
+  width="${WIDTH - 6}"
+  height="${HEIGHT - 6}"
+  rx="19"
+  fill="none"
+  stroke="url(#borderGradient)"
+  stroke-width="2"
+/>
+
+
+<!-- =====================================================
+     TERMINAL HEADER
+====================================================== -->
+
+<circle
+  cx="25"
+  cy="25"
+  r="7"
+  fill="#ff4d56"
+/>
+
+<circle
+  cx="48"
+  cy="25"
+  r="7"
+  fill="#ffbd2e"
+/>
+
+<circle
+  cx="71"
+  cy="25"
+  r="7"
+  fill="#28ca42"
+/>
+
+
+<text
+  x="600"
+  y="30"
+  text-anchor="middle"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="14"
+  font-weight="bold"
+>
+terminal@${clean(username)}:~$ ./profile --live
+</text>
+
+
+<text
+  x="1160"
+  y="30"
+  text-anchor="end"
+  fill="#ff3fc8"
+  font-family="monospace"
+  font-size="11"
+  font-weight="bold"
+>
+[ ONLINE ]
+</text>
+
+
+<!-- =====================================================
+     LEFT PANEL
+====================================================== -->
+
+<rect
+  x="25"
+  y="52"
+  width="430"
+  height="390"
+  rx="12"
+  fill="url(#panelGradient)"
+  stroke="#007b91"
+  stroke-width="1"
+/>
+
+
+<text
+  x="42"
+  y="76"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="12"
+  font-weight="bold"
+>
+&gt; VISUAL.INFO
+</text>
+
+
+<!-- Avatar container -->
+
+<rect
+  x="60"
+  y="95"
+  width="390"
+  height="320"
+  rx="10"
+  fill="#02060c"
+  stroke="#0b5067"
+  stroke-width="1"
+/>
+
+
+<!-- REAL GITHUB AVATAR -->
+
+<image
+  href="${avatar}"
+  x="60"
+  y="95"
+  width="390"
+  height="320"
+  preserveAspectRatio="xMidYMid slice"
+  clip-path="url(#avatarClip)"
+  filter="url(#avatarFilter)"
+/>
+
+
+<!-- Dot effect -->
+
+<rect
+  x="60"
+  y="95"
+  width="390"
+  height="320"
+  rx="10"
+  fill="url(#dots)"
+  clip-path="url(#avatarClip)"
+/>
+
+
+<!-- Scanline effect -->
+
+<rect
+  x="60"
+  y="95"
+  width="390"
+  height="320"
+  rx="10"
+  fill="url(#scanlines)"
+  clip-path="url(#avatarClip)"
+/>
+
+
+<!-- Moving scan -->
+
+<rect
+  x="60"
+  y="95"
+  width="390"
+  height="2"
+  fill="#00ffff"
+  opacity="0.65"
+  filter="url(#glow)"
+>
+
+  <animate
+    attributeName="y"
+    values="100;410;100"
+    dur="4s"
+    repeatCount="indefinite"
+  />
+
+</rect>
+
+
+<!-- =====================================================
+     RIGHT PANEL
+====================================================== -->
+
+<rect
+  x="475"
+  y="52"
+  width="700"
+  height="390"
+  rx="12"
+  fill="url(#panelGradient)"
+  stroke="#007b91"
+  stroke-width="1"
+/>
+
+
+<text
+  x="495"
+  y="76"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="12"
+  font-weight="bold"
+>
+&gt; PROFILE.INFO
+</text>
+
+
+<!-- Name -->
+
+<text
+  x="495"
+  y="110"
+  fill="#00ff7f"
+  font-family="monospace"
+  font-size="25"
+  font-weight="bold"
+  filter="url(#glow)"
+>
+${clean(name, 35)}
+</text>
+
+
+<!-- Role -->
+
+<text
+  x="495"
+  y="134"
+  fill="#d7e3ef"
+  font-family="monospace"
+  font-size="12"
+>
+Full Stack Developer
+<tspan fill="#00ff9c"> █</tspan>
+</text>
+
+
+<line
+  x1="495"
+  y1="150"
+  x2="1148"
+  y2="150"
+  stroke="#124357"
+/>
+
+
+<!-- =====================================================
+     BASIC INFORMATION
+====================================================== -->
+
+<text
+  x="495"
+  y="173"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="11"
+>
+Username
+</text>
+
+<text
+  x="610"
+  y="173"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="11"
+>
+: ${clean(username, 35)}
+</text>
+
+
+<text
+  x="495"
+  y="194"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="11"
+>
+Role
+</text>
+
+<text
+  x="610"
+  y="194"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="11"
+>
+: Full Stack Developer
+</text>
+
+
+<text
+  x="495"
+  y="215"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="11"
+>
+Location
+</text>
+
+<text
+  x="610"
+  y="215"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="11"
+>
+: ${clean(location, 35)}
+</text>
+
+
+<text
+  x="495"
+  y="236"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="11"
+>
+Repositories
+</text>
+
+<text
+  x="610"
+  y="236"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="11"
+>
+: ${repositories}
+</text>
+
+
+<text
+  x="495"
+  y="257"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="11"
+>
+Followers
+</text>
+
+<text
+  x="610"
+  y="257"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="11"
+>
+: ${followers}
+</text>
+
+
+<text
+  x="495"
+  y="278"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="11"
+>
+Following
+</text>
+
+<text
+  x="610"
+  y="278"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="11"
+>
+: ${following}
+</text>
+
+
+<!-- =====================================================
+     TECH STACK
+====================================================== -->
+
+<line
+  x1="495"
+  y1="294"
+  x2="1148"
+  y2="294"
+  stroke="#124357"
+/>
+
+
+<text
+  x="495"
+  y="316"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="12"
+  font-weight="bold"
+>
+&gt; TECH.STACK
+</text>
+
+
+<text
+  x="495"
+  y="338"
+  fill="#c084fc"
+  font-family="monospace"
+  font-size="10"
+>
+Core.Frontend
+</text>
+
+<text
+  x="610"
+  y="338"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="10"
+>
+: React • JavaScript • HTML • CSS
+</text>
+
+
+<text
+  x="495"
+  y="356"
+  fill="#c084fc"
+  font-family="monospace"
+  font-size="10"
+>
+Core.Backend
+</text>
+
+<text
+  x="610"
+  y="356"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="10"
+>
+: Java • Spring Boot • Node.js
+</text>
+
+
+<text
+  x="495"
+  y="374"
+  fill="#c084fc"
+  font-family="monospace"
+  font-size="10"
+>
+Core.Database
+</text>
+
+<text
+  x="610"
+  y="374"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="10"
+>
+: MongoDB • MySQL • Firebase
+</text>
+
+
+<text
+  x="495"
+  y="392"
+  fill="#c084fc"
+  font-family="monospace"
+  font-size="10"
+>
+Core.Languages
+</text>
+
+<text
+  x="610"
+  y="392"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="10"
+>
+: ${clean(languages.join(" • ") || "JavaScript • Java", 65)}
+</text>
+
+
+<text
+  x="495"
+  y="416"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="9"
+>
+$ ${clean(bio, 75)}
+</text>
+
+
+<!-- =====================================================
+     LIVE STATS
+====================================================== -->
+
+<rect
+  x="25"
+  y="460"
+  width="1150"
+  height="120"
+  rx="12"
+  fill="url(#panelGradient)"
+  stroke="#00b889"
+  stroke-width="1"
+/>
+
+
+<text
+  x="42"
+  y="484"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="12"
+  font-weight="bold"
+>
+&gt; LIVE.STATS
+</text>
+
+
+<!-- Repositories -->
+
+<text
+  x="75"
+  y="514"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="9"
+>
+PUBLIC.REPOS
+</text>
+
+<text
+  x="75"
+  y="540"
+  fill="#ffffff"
+  font-family="monospace"
+  font-size="20"
+  font-weight="bold"
+>
+${repositories}
+</text>
+
+
+<!-- Followers -->
+
+<text
+  x="290"
+  y="514"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="9"
+>
+FOLLOWERS
+</text>
+
+<text
+  x="290"
+  y="540"
+  fill="#ffffff"
+  font-family="monospace"
+  font-size="20"
+  font-weight="bold"
+>
+${followers}
+</text>
+
+
+<!-- Stars -->
+
+<text
+  x="500"
+  y="514"
+  fill="#ffd43b"
+  font-family="monospace"
+  font-size="9"
+>
+STARS
+</text>
+
+<text
+  x="500"
+  y="540"
+  fill="#ffffff"
+  font-family="monospace"
+  font-size="20"
+  font-weight="bold"
+>
+${totalStars}
+</text>
+
+
+<!-- Forks -->
+
+<text
+  x="670"
+  y="514"
+  fill="#c084fc"
+  font-family="monospace"
+  font-size="9"
+>
+FORKS
+</text>
+
+<text
+  x="670"
+  y="540"
+  fill="#ffffff"
+  font-family="monospace"
+  font-size="20"
+  font-weight="bold"
+>
+${totalForks}
+</text>
+
+
+<!-- Languages -->
+
+<text
+  x="835"
+  y="514"
+  fill="#ff4fd8"
+  font-family="monospace"
+  font-size="9"
+>
+LANGUAGES
+</text>
+
+<text
+  x="835"
+  y="540"
+  fill="#ffffff"
+  font-family="monospace"
+  font-size="10"
+>
+${clean(languages.slice(0, 3).join(" • ") || "JavaScript", 30)}
+</text>
+
+
+<!-- Status -->
+
+<text
+  x="1050"
+  y="514"
+  fill="#39ff88"
+  font-family="monospace"
+  font-size="9"
+>
+STATUS
+</text>
+
+<text
+  x="1050"
+  y="540"
+  fill="#39ff88"
+  font-family="monospace"
+  font-size="15"
+  font-weight="bold"
+  filter="url(#glow)"
+>
+ACTIVE
+</text>
+
+
+<!-- =====================================================
+     TERMINAL FOOTER
+====================================================== -->
+
+<text
+  x="42"
+  y="564"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="9"
+>
+$ live github data loaded • auto-generated by GitHub Actions
+</text>
+
+
+<!-- Blinking cursor -->
+
+<rect
+  x="1150"
+  y="556"
+  width="6"
+  height="10"
+  fill="#00ff9c"
+>
+
+  <animate
+    attributeName="opacity"
+    values="1;0;1"
+    dur="0.9s"
+    repeatCount="indefinite"
+  />
+
+</rect>
 
 </svg>
 `;
 
-fs.mkdirSync("dist", { recursive: true });
+/* =========================================================
+   WRITE SVG
+========================================================= */
+
+fs.mkdirSync("dist", {
+  recursive: true,
+});
 
 fs.writeFileSync(
   "dist/profile.svg",
@@ -772,15 +1052,25 @@ fs.writeFileSync(
   "utf8"
 );
 
-console.log("====================================");
-console.log(" Terminal Profile Generated");
-console.log("====================================");
-console.log("Username:", username);
-console.log("Name:", name);
-console.log("Repositories:", publicRepos);
-console.log("Followers:", followers);
-console.log("Stars:", totalStars);
-console.log("Forks:", totalForks);
-console.log("Languages:", topLanguages);
-console.log("Output: dist/profile.svg");
-console.log("====================================");
+/* =========================================================
+   LOG
+========================================================= */
+
+console.log("");
+console.log("==========================================");
+console.log(" TERMINAL GITHUB PROFILE GENERATED");
+console.log("==========================================");
+console.log(`Username     : ${username}`);
+console.log(`Name         : ${name}`);
+console.log(`Location     : ${location}`);
+console.log(`Repositories : ${repositories}`);
+console.log(`Followers    : ${followers}`);
+console.log(`Following    : ${following}`);
+console.log(`Stars        : ${totalStars}`);
+console.log(`Forks        : ${totalForks}`);
+console.log(
+  `Languages    : ${languages.join(", ")}`
+);
+console.log("Output       : dist/profile.svg");
+console.log("==========================================");
+console.log("");
