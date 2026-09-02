@@ -113,6 +113,16 @@ I focus on writing clean, maintainable code while understanding how different pa
 </p>
 
 ---
+## 🛩️ GitHub Jet Heatmap
+<p align="center">
+  <img
+    src="https://raw.githubusercontent.com/Vineeth1512/Vineeth1512/master/dist/github-jet.svg"
+    alt="GitHub Jet Heatmap"
+    width="100%"
+  />
+</p>
+
+---
 
 ## 🚀 Featured Projects
 
