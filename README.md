@@ -35,9 +35,17 @@
   <img src="https://img.shields.io/github/followers/Vineeth1512?label=Followers&style=for-the-badge&color=6D28D9&labelColor=111827" />
   <img src="https://img.shields.io/github/stars/Vineeth1512?label=Stars&style=for-the-badge&color=8B5CF6&labelColor=111827" />
 </p>
+---
+<p align="center">
+  <img
+    src="https://raw.githubusercontent.com/Vineeth1512/Vineeth1512/master/dist/profile.svg"
+    alt="Vineeth Kumar GitHub Profile"
+    width="100%"
+  />
+</p>
+
 
 ---
-
 ## 👨‍💻 About Me
 
 I'm a passionate **Full Stack Developer** who enjoys designing and building responsive, scalable, and user-friendly web applications.
