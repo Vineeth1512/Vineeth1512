@@ -1,40 +1,69 @@
 <h1 align="center">👋 Hi, I'm Vineeth Kumar</h1>
 
 <p align="center">
-  <strong>Full Stack Developer | Java & React Enthusiast | Cloud Learner</strong>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:312e81,50:6d28d9,100:7c3aed&height=180&section=header&text=Vineeth%20Kumar&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/vineethkumar-mudham/">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
+  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=22&duration=3000&pause=1000&color=A78BFA&center=true&vCenter=true&width=750&lines=Full+Stack+Developer;React+%7C+Java+%7C+Spring+Boot;Building+Scalable+Web+Applications;Exploring+Cloud+%26+Modern+Technologies;Always+Learning%2C+Building+%26+Improving" alt="Typing SVG" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Full%20Stack-Developer-6D28D9?style=for-the-badge&labelColor=111827" />
+  <img src="https://img.shields.io/badge/Java-Developer-7C3AED?style=for-the-badge&labelColor=111827" />
+  <img src="https://img.shields.io/badge/React-Developer-4F46E5?style=for-the-badge&labelColor=111827" />
+  <img src="https://img.shields.io/badge/📍-India-312E81?style=for-the-badge&labelColor=111827" />
+</p>
+
+<p align="center">
   <a href="https://vineeth-kumar-portfolio.netlify.app/">
-    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=firefox&logoColor=white" />
+    <img src="https://img.shields.io/badge/Portfolio-Visit%20My%20Portfolio-7C3AED?style=for-the-badge&logo=firefox&logoColor=white&labelColor=111827" />
   </a>
-  <a href="https://www.instagram.com/vineeth_kumar_patel/">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+  <a href="https://www.linkedin.com/in/vineethkumar-mudham/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-4F46E5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=111827" />
+  </a>
+  <a href="mailto:vineethkumar@example.com">
+    <img src="https://img.shields.io/badge/Email-Contact%20Me-6D28D9?style=for-the-badge&logo=gmail&logoColor=white&labelColor=111827" />
+  </a>
+  <a href="https://github.com/Vineeth1512">
+    <img src="https://img.shields.io/badge/GitHub-Vineeth1512-8B5CF6?style=for-the-badge&logo=github&logoColor=white&labelColor=111827" />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Vineeth1512&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=Vineeth1512&label=Profile%20Views&color=7C3AED&style=for-the-badge" />
+  <img src="https://img.shields.io/github/followers/Vineeth1512?label=Followers&style=for-the-badge&color=6D28D9&labelColor=111827" />
+  <img src="https://img.shields.io/github/stars/Vineeth1512?label=Stars&style=for-the-badge&color=8B5CF6&labelColor=111827" />
 </p>
 
 ---
 
 ## 👨‍💻 About Me
 
-I'm a passionate **Full Stack Developer** who enjoys building responsive, scalable, and user-friendly web applications.
+I'm a passionate **Full Stack Developer** who enjoys designing and building responsive, scalable, and user-friendly web applications.
 
-* 💻 Working with **React, JavaScript, Java, Spring Boot & Node.js**
+I focus on writing clean, maintainable code while understanding how different parts of an application work together — from frontend interfaces and REST APIs to databases, authentication, deployment, and backend architecture.
+
+* 💻 Building applications with **React, JavaScript, Java, Spring Boot & Node.js**
+* ⚛️ Developing responsive and reusable **React components**
+* ☕ Strengthening backend development with **Java & Spring Boot**
 * 🔗 Building and consuming **REST APIs**
-* 🗄️ Experience with **MySQL, MongoDB & Firebase**
-* ☁️ Exploring **Cloud, deployment & scalable applications**
-* 🧠 Continuously improving my **problem-solving and development skills**
-* 🚀 Interested in building real-world applications
-* 🤝 Open to collaborations, side projects and hackathons
-* 🏏 In my free time, I enjoy cricket, movies and traveling
-* 🏋️‍♂️ Fitness and gym are part of my routine
+* 🗄️ Working with **MySQL, MongoDB, Firebase & Firestore**
+* 🔐 Implementing authentication and protected application flows
+* ☁️ Exploring **cloud, deployment and scalable application architecture**
+* 🧠 Continuously improving **problem-solving and software engineering skills**
+* 🏗️ Learning **system design and backend architecture**
+* 🚀 Interested in building real-world products that solve practical problems
+* 🤝 Open to collaborations, side projects, hackathons and open-source contributions
+
+### 🎯 Open To
+
+* 💼 Software Developer opportunities
+* 💻 Full Stack Developer opportunities
+* 🤝 Open-source collaborations
+* 🚀 Real-world side projects
+* 🧑‍💻 Hackathons and developer communities
+* 🌐 Building meaningful products
 
 ---
 
@@ -87,47 +116,100 @@ I'm a passionate **Full Stack Developer** who enjoys building responsive, scalab
 
 ## 🚀 Featured Projects
 
-### 🗨️ SparkChat
+<details>
+<summary><strong>🗨️ SparkChat — Real-Time Chat Application</strong></summary>
 
-**Real-time chat application built with React and Node.js.**
+<br>
 
-* 🔐 JWT-based authentication
-* 💬 Real-time messaging using WebSockets
-* 🗄️ MongoDB Atlas database
-* 🎨 Responsive UI with Tailwind CSS
-* 🔑 Login and protected routes
+**SparkChat** is a real-time chat application built using React and Node.js, with authenticated users, protected routes and real-time communication.
 
-🌐 **Live:** [SparkChat](https://chat-application-spark-chat.onrender.com/login)
+| Category        | Details                                                                |
+| --------------- | ---------------------------------------------------------------------- |
+| **Stack**       | React, Node.js, Express.js, MongoDB, WebSockets, Tailwind CSS          |
+| **Scale**       | Full-stack application with authentication and real-time communication |
+| **Performance** | WebSocket-based real-time messaging                                    |
+| **Security**    | JWT authentication and protected routes                                |
+| **Impact**      | Provides users with a responsive real-time communication experience    |
+| **Repository**  | [GitHub Repository](https://github.com/Vineeth1512)                    |
 
----
+### Engineering Highlights
 
-### 🩸 Blood Donation App
+* JWT-based authentication
+* Real-time messaging using WebSockets
+* MongoDB Atlas database
+* Responsive UI with Tailwind CSS
+* Login and protected routes
+* Full-stack client-server architecture
+* Production deployment
 
-**A platform connecting blood donors and patients.**
+**Live Application:** [SparkChat](https://chat-application-spark-chat.onrender.com/login)
 
-* 🔐 Firebase Authentication
-* 🗄️ Firestore database
-* 👤 Donor & Patient modules
-* 🧑‍💼 Role-based access
-* 📱 Donor profile management
-* 📞 Patient can find and contact donors
+</details>
 
-🌐 **Live:** [Blood Donation App](https://blood-donation-js.netlify.app/)
+<br>
 
----
+<details>
+<summary><strong>🩸 Blood Donation App — Donor & Patient Platform</strong></summary>
 
-### ❓ Quiz Hut
+<br>
 
-**Online quiz platform with role-based access.**
+A web application designed to connect blood donors and patients through authentication, role-based access and donor profile management.
 
-* 🔐 User authentication
-* 👨‍💼 Admin question management
-* 📝 Online quiz taking
-* 👤 User dashboard
-* 💾 MongoDB database
-* ⚛️ MERN stack
+| Category        | Details                                                   |
+| --------------- | --------------------------------------------------------- |
+| **Stack**       | JavaScript, Firebase Authentication, Firestore, HTML, CSS |
+| **Scale**       | Donor and patient workflows with role-based functionality |
+| **Performance** | Firebase-powered cloud data access                        |
+| **Security**    | Firebase Authentication and role-based access             |
+| **Impact**      | Helps patients find and contact suitable blood donors     |
+| **Repository**  | [GitHub Repository](https://github.com/Vineeth1512)       |
 
-🌐 **Live:** [Quiz Hut](https://first-quiz-hunt.vercel.app/)
+### Engineering Highlights
+
+* Firebase Authentication
+* Firestore database
+* Donor and patient modules
+* Role-based access
+* Donor profile management
+* Patient donor discovery
+* Patient-to-donor contact workflow
+* Responsive application interface
+
+**Live Application:** [Blood Donation App](https://blood-donation-js.netlify.app/)
+
+</details>
+
+<br>
+
+<details>
+<summary><strong>❓ Quiz Hut — MERN Quiz Platform</strong></summary>
+
+<br>
+
+**Quiz Hut** is an online quiz platform built using the MERN stack with authentication, role-based access, admin question management and user quiz workflows.
+
+| Category        | Details                                                          |
+| --------------- | ---------------------------------------------------------------- |
+| **Stack**       | MongoDB, Express.js, React, Node.js                              |
+| **Scale**       | Multi-role application with user and admin workflows             |
+| **Performance** | API-driven client-server architecture                            |
+| **Security**    | Authentication and role-based access                             |
+| **Impact**      | Provides an interactive platform for creating and taking quizzes |
+| **Repository**  | [GitHub Repository](https://github.com/Vineeth1512)              |
+
+### Engineering Highlights
+
+* User authentication
+* Admin question management
+* Online quiz functionality
+* User dashboard
+* MongoDB database
+* MERN stack architecture
+* Role-based application workflows
+
+**Live Application:** [Quiz Hut](https://first-quiz-hunt.vercel.app/)
+
+</details>
 
 ---
 
@@ -149,14 +231,15 @@ System Design  ██████████░░░░░░░░░░░�
 * ☁️ Cloud & Deployment
 * 🏗️ Scalable Backend Architecture
 * 🧩 System Design
+* 🧠 Software Engineering Best Practices
 
 ---
 
 ## 📊 GitHub Statistics
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Vineeth1512&show_icons=true&theme=radical&hide_border=true" height="180" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vineeth1512&layout=compact&theme=radical&hide_border=true" height="180" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Vineeth1512&show_icons=true&theme=transparent&hide_border=true&title_color=A78BFA&text_color=C4B5FD&icon_color=8B5CF6&bg_color=0D1117" height="180" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vineeth1512&layout=compact&theme=transparent&hide_border=true&title_color=A78BFA&text_color=C4B5FD&icon_color=8B5CF6&bg_color=0D1117" height="180" />
 </p>
 
 ---
@@ -164,7 +247,7 @@ System Design  ██████████░░░░░░░░░░░�
 ## 🔥 GitHub Streak
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=Vineeth1512&theme=radical&hide_border=true" />
+  <img src="https://streak-stats.demolab.com?user=Vineeth1512&theme=transparent&hide_border=true&background=0D1117&ring=8B5CF6&fire=A78BFA&currStreakLabel=A78BFA&sideLabels=C4B5FD&dates=94A3B8" />
 </p>
 
 ---
@@ -172,7 +255,7 @@ System Design  ██████████░░░░░░░░░░░�
 ## 📈 GitHub Activity
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Vineeth1512&theme=react-dark&hide_border=true" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Vineeth1512&bg_color=0D1117&color=A78BFA&line=7C3AED&point=C4B5FD&area=true&hide_border=true" width="95%" />
 </p>
 
 ---
@@ -180,7 +263,7 @@ System Design  ██████████░░░░░░░░░░░�
 ## 🏆 GitHub Trophies
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Vineeth1512&theme=radical&no-frame=true&no-bg=true&margin-w=4" />
+  <img src="https://github-profile-trophy.vercel.app/?username=Vineeth1512&theme=discord&no-frame=true&no-bg=true&margin-w=8&column=7" />
 </p>
 
 ---
@@ -195,6 +278,8 @@ System Design  ██████████░░░░░░░░░░░�
 * 💼 Prepare for software developer interviews
 * 📚 Contribute to open-source projects
 * 🔥 Stay consistent with daily learning
+* 🧠 Improve software engineering fundamentals
+* 🌐 Build and deploy more real-world applications
 
 ---
 
@@ -202,7 +287,7 @@ System Design  ██████████░░░░░░░░░░░�
 
 <p align="center">
 
-> **Build → Learn → Improve → Repeat 🚀**
+**Build → Learn → Improve → Repeat**
 
 </p>
 
@@ -215,20 +300,31 @@ System Design  ██████████░░░░░░░░░░░�
 ## 🤝 Let's Connect
 
 <p align="center">
-  I'm always interested in discussing technology, projects, collaborations and new opportunities.
+  I'm always interested in discussing technology, full-stack development, projects, collaborations and new opportunities.
 </p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/vineethkumar-mudham/">
-    <img src="https://img.shields.io/badge/Let's%20Connect-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+    <img src="https://img.shields.io/badge/Let's%20Connect-LinkedIn-4F46E5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=111827" />
   </a>
   <a href="https://vineeth-kumar-portfolio.netlify.app/">
-    <img src="https://img.shields.io/badge/Visit%20My%20Portfolio-000000?style=for-the-badge&logo=firefox&logoColor=white" />
+    <img src="https://img.shields.io/badge/Visit%20My%20Portfolio-7C3AED?style=for-the-badge&logo=firefox&logoColor=white&labelColor=111827" />
+  </a>
+  <a href="https://github.com/Vineeth1512">
+    <img src="https://img.shields.io/badge/Follow%20My%20Work-GitHub-8B5CF6?style=for-the-badge&logo=github&logoColor=white&labelColor=111827" />
   </a>
 </p>
 
 ---
 
 <p align="center">
-  ⭐ <b>Thanks for visiting my profile!</b> ⭐
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:312e81,50:6d28d9,100:7c3aed&height=120&section=footer" width="100%" />
+</p>
+
+<p align="center">
+  ⭐ <strong>Thanks for visiting my profile!</strong> ⭐
+</p>
+
+<p align="center">
+  <i>Building today. Learning every day. Engineering for tomorrow.</i>
 </p>
