@@ -1,644 +1,870 @@
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
   width="1200"
-  height="650"
-  viewBox="0 0 1200 650"
+  height="610"
+  viewBox="0 0 1200 610"
 >
 
-  <defs>
+<defs>
 
-    <filter id="glow">
-      <feGaussianBlur
-        stdDeviation="3"
-        result="blur"
+  <!-- Main border -->
+  <linearGradient
+    id="borderGradient"
+    x1="0"
+    y1="0"
+    x2="1"
+    y2="1"
+  >
+    <stop
+      offset="0%"
+      stop-color="#00ffff"
+    />
+
+    <stop
+      offset="50%"
+      stop-color="#00ff9c"
+    />
+
+    <stop
+      offset="100%"
+      stop-color="#7047ff"
+    />
+  </linearGradient>
+
+
+  <!-- Panel -->
+  <linearGradient
+    id="panelGradient"
+    x1="0"
+    y1="0"
+    x2="1"
+    y2="1"
+  >
+
+    <stop
+      offset="0%"
+      stop-color="#07101d"
+    />
+
+    <stop
+      offset="100%"
+      stop-color="#030812"
+    />
+
+  </linearGradient>
+
+
+  <!-- Avatar filter -->
+  <filter
+    id="avatarFilter"
+    x="-20%"
+    y="-20%"
+    width="140%"
+    height="140%"
+  >
+
+    <feColorMatrix
+      type="matrix"
+      values="
+        0.40 0.40 0.20 0 0
+        0.40 0.40 0.20 0 0
+        0.40 0.40 0.20 0 0
+        0    0    0    1 0
+      "
+    />
+
+  </filter>
+
+
+  <!-- Glow -->
+  <filter
+    id="glow"
+    x="-50%"
+    y="-50%"
+    width="200%"
+    height="200%"
+  >
+
+    <feGaussianBlur
+      stdDeviation="2"
+      result="blur"
+    />
+
+    <feMerge>
+
+      <feMergeNode
+        in="blur"
       />
 
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+      <feMergeNode
+        in="SourceGraphic"
+      />
 
-    <linearGradient
-      id="border"
-      x1="0"
-      y1="0"
-      x2="1"
-      y2="1"
-    >
-      <stop offset="0%" stop-color="#00ffff"/>
-      <stop offset="50%" stop-color="#00ff9c"/>
-      <stop offset="100%" stop-color="#7c3aed"/>
-    </linearGradient>
+    </feMerge>
 
-  </defs>
+  </filter>
 
 
-  <!-- BACKGROUND -->
-
-  <rect
-    width="100%"
-    height="100%"
-    rx="22"
-    fill="#050912"
-  />
-
-  <rect
-    x="3"
-    y="3"
-    width="1194"
-    height="644"
-    rx="20"
-    fill="none"
-    stroke="url(#border)"
-    stroke-width="2"
-  />
-
-
-  <!-- TERMINAL HEADER -->
-
-  <circle
-    cx="32"
-    cy="30"
-    r="8"
-    fill="#ff5f56"
-  />
-
-  <circle
-    cx="56"
-    cy="30"
-    r="8"
-    fill="#ffbd2e"
-  />
-
-  <circle
-    cx="80"
-    cy="30"
-    r="8"
-    fill="#27c93f"
-  />
-
-  <text
-    x="430"
-    y="37"
-    text-anchor="middle"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="18"
-    font-weight="bold"
+  <!-- Scanlines -->
+  <pattern
+    id="scanlines"
+    width="4"
+    height="8"
+    patternUnits="userSpaceOnUse"
   >
-    terminal@Vineeth1512:~$ ./profile --live
-  </text>
 
-  <text
-    x="1135"
-    y="37"
-    text-anchor="end"
-    fill="#ff4fd8"
-    font-family="monospace"
-    font-size="15"
-    font-weight="bold"
-  >
-    [ ONLINE ]
-  </text>
-
-
-  <!-- LEFT PANEL -->
-
-  <rect
-    x="25"
-    y="65"
-    width="420"
-    height="450"
-    rx="14"
-    fill="#07101c"
-    stroke="#00c9d9"
-    stroke-width="1"
-  />
-
-  <text
-    x="45"
-    y="95"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="17"
-    font-weight="bold"
-  >
-    &gt; DEVELOPER.PROFILE
-  </text>
-
-
-  <!-- AVATAR -->
-
-  <rect
-    x="55"
-    y="120"
-    width="360"
-    height="250"
-    rx="10"
-    fill="#02060c"
-    stroke="#164e63"
-  />
-
-  <image
-    href="https://avatars.githubusercontent.com/u/114067110?v=4"
-    x="135"
-    y="130"
-    width="200"
-    height="200"
-    preserveAspectRatio="xMidYMid slice"
-  />
-
-  <text
-    x="235"
-    y="350"
-    text-anchor="middle"
-    fill="#00ffff"
-    font-family="monospace"
-    font-size="15"
-  >
-    &gt; Vineeth1512_
-  </text>
-
-
-  <!-- LEFT BOTTOM -->
-
-  <line
-    x1="45"
-    y1="395"
-    x2="425"
-    y2="395"
-    stroke="#164e63"
-  />
-
-  <text
-    x="45"
-    y="425"
-    fill="#7dd3fc"
-    font-family="monospace"
-    font-size="14"
-  >
-    &gt; STATUS
-  </text>
-
-  <text
-    x="45"
-    y="450"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="14"
-  >
-    ● BUILDING • LEARNING • GROWING
-  </text>
-
-  <text
-    x="45"
-    y="480"
-    fill="#94a3b8"
-    font-family="monospace"
-    font-size="13"
-  >
-    👋 About Me
-Hi, I’m Vineeth 👨‍💻, a passionate
-  </text>
-
-
-  <!-- RIGHT PANEL -->
-
-  <rect
-    x="465"
-    y="65"
-    width="710"
-    height="450"
-    rx="14"
-    fill="#07101c"
-    stroke="#00c9d9"
-    stroke-width="1"
-  />
-
-  <text
-    x="490"
-    y="95"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="17"
-    font-weight="bold"
-  >
-    &gt; PROFILE.INFO
-  </text>
-
-
-  <!-- NAME -->
-
-  <text
-    x="490"
-    y="130"
-    fill="#39ff88"
-    font-family="monospace"
-    font-size="28"
-    font-weight="bold"
-  >
-    Vineeth kumar
-  </text>
-
-  <text
-    x="490"
-    y="158"
-    fill="#dbeafe"
-    font-family="monospace"
-    font-size="17"
-  >
-    Full Stack Developer
-    <tspan fill="#00ff9c"> █</tspan>
-  </text>
-
-
-  <line
-    x1="490"
-    y1="175"
-    x2="1145"
-    y2="175"
-    stroke="#155e75"
-  />
-
-
-  <!-- PROFILE INFORMATION -->
-
-  <text
-    x="490"
-    y="205"
-    fill="#22d3ee"
-    font-family="monospace"
-    font-size="14"
-  >
-    Username
-  </text>
-
-  <text
-    x="650"
-    y="205"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : Vineeth1512
-  </text>
-
-
-  <text
-    x="490"
-    y="230"
-    fill="#22d3ee"
-    font-family="monospace"
-    font-size="14"
-  >
-    Location
-  </text>
-
-  <text
-    x="650"
-    y="230"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : Hyderabad
-  </text>
-
-
-  <text
-    x="490"
-    y="255"
-    fill="#22d3ee"
-    font-family="monospace"
-    font-size="14"
-  >
-    Repositories
-  </text>
-
-  <text
-    x="650"
-    y="255"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : 107
-  </text>
-
-
-  <text
-    x="490"
-    y="280"
-    fill="#22d3ee"
-    font-family="monospace"
-    font-size="14"
-  >
-    Followers
-  </text>
-
-  <text
-    x="650"
-    y="280"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : 5
-  </text>
-
-
-  <text
-    x="490"
-    y="305"
-    fill="#22d3ee"
-    font-family="monospace"
-    font-size="14"
-  >
-    Following
-  </text>
-
-  <text
-    x="650"
-    y="305"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : 9
-  </text>
-
-
-  <!-- TECH STACK -->
-
-  <line
-    x1="490"
-    y1="330"
-    x2="1145"
-    y2="330"
-    stroke="#155e75"
-  />
-
-  <text
-    x="490"
-    y="355"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="16"
-    font-weight="bold"
-  >
-    &gt; TECH.STACK
-  </text>
-
-
-  <text
-    x="490"
-    y="385"
-    fill="#c084fc"
-    font-family="monospace"
-    font-size="14"
-  >
-    Frontend
-  </text>
-
-  <text
-    x="650"
-    y="385"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : React • JavaScript • HTML • CSS
-  </text>
-
-
-  <text
-    x="490"
-    y="410"
-    fill="#c084fc"
-    font-family="monospace"
-    font-size="14"
-  >
-    Backend
-  </text>
-
-  <text
-    x="650"
-    y="410"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : Java • Spring Boot • Node.js
-  </text>
-
-
-  <text
-    x="490"
-    y="435"
-    fill="#c084fc"
-    font-family="monospace"
-    font-size="14"
-  >
-    Database
-  </text>
-
-  <text
-    x="650"
-    y="435"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : MongoDB • MySQL • Firebase
-  </text>
-
-
-  <text
-    x="490"
-    y="460"
-    fill="#c084fc"
-    font-family="monospace"
-    font-size="14"
-  >
-    Languages
-  </text>
-
-  <text
-    x="650"
-    y="460"
-    fill="#e5e7eb"
-    font-family="monospace"
-    font-size="14"
-  >
-    : JavaScript • HTML • Java • CSS • Python
-  </text>
-
-
-  <text
-    x="490"
-    y="490"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="13"
-  >
-    $ 👋 About Me
-Hi, I’m Vineeth 👨‍💻, a passionate Full Stack Developer with 
-  </text>
-
-
-  <!-- LIVE STATS -->
-
-  <rect
-    x="25"
-    y="535"
-    width="1150"
-    height="90"
-    rx="14"
-    fill="#07101c"
-    stroke="#00ff9c"
-    stroke-width="1"
-  />
-
-  <text
-    x="45"
-    y="562"
-    fill="#00ff9c"
-    font-family="monospace"
-    font-size="15"
-    font-weight="bold"
-  >
-    &gt; LIVE.STATS
-  </text>
-
-
-  <text
-    x="85"
-    y="595"
-    fill="#a855f7"
-    font-family="monospace"
-    font-size="13"
-  >
-    REPOSITORIES
-  </text>
-
-  <text
-    x="85"
-    y="615"
-    fill="#ffffff"
-    font-family="monospace"
-    font-size="18"
-    font-weight="bold"
-  >
-    107
-  </text>
-
-
-  <text
-    x="320"
-    y="595"
-    fill="#22d3ee"
-    font-family="monospace"
-    font-size="13"
-  >
-    FOLLOWERS
-  </text>
-
-  <text
-    x="320"
-    y="615"
-    fill="#ffffff"
-    font-family="monospace"
-    font-size="18"
-    font-weight="bold"
-  >
-    5
-  </text>
-
-
-  <text
-    x="555"
-    y="595"
-    fill="#facc15"
-    font-family="monospace"
-    font-size="13"
-  >
-    STARS
-  </text>
-
-  <text
-    x="555"
-    y="615"
-    fill="#ffffff"
-    font-family="monospace"
-    font-size="18"
-    font-weight="bold"
-  >
-    11
-  </text>
-
-
-  <text
-    x="760"
-    y="595"
-    fill="#39ff88"
-    font-family="monospace"
-    font-size="13"
-  >
-    FORKS
-  </text>
-
-  <text
-    x="760"
-    y="615"
-    fill="#ffffff"
-    font-family="monospace"
-    font-size="18"
-    font-weight="bold"
-  >
-    0
-  </text>
-
-
-  <text
-    x="960"
-    y="595"
-    fill="#ff4d4d"
-    font-family="monospace"
-    font-size="13"
-  >
-    STATUS
-  </text>
-
-  <text
-    x="960"
-    y="615"
-    fill="#39ff88"
-    font-family="monospace"
-    font-size="18"
-    font-weight="bold"
-  >
-    ACTIVE
-  </text>
-
-
-  <!-- CURSOR ANIMATION -->
-
-  <rect
-    x="1135"
-    y="486"
-    width="8"
-    height="15"
-    fill="#00ff9c"
-  >
-    <animate
-      attributeName="opacity"
-      values="1;0;1"
-      dur="1s"
-      repeatCount="indefinite"
+    <rect
+      width="4"
+      height="2"
+      fill="#00ffff"
+      opacity="0.15"
     />
-  </rect>
+
+  </pattern>
+
+
+  <!-- Dot matrix -->
+  <pattern
+    id="dots"
+    width="7"
+    height="7"
+    patternUnits="userSpaceOnUse"
+  >
+
+    <circle
+      cx="2"
+      cy="2"
+      r="1"
+      fill="#00ffff"
+      opacity="0.25"
+    />
+
+  </pattern>
+
+
+  <!-- Avatar clip -->
+  <clipPath
+    id="avatarClip"
+  >
+
+    <rect
+      x="60"
+      y="95"
+      width="390"
+      height="320"
+      rx="10"
+    />
+
+  </clipPath>
+
+</defs>
+
+
+<!-- =====================================================
+     BACKGROUND
+====================================================== -->
+
+<rect
+  x="0"
+  y="0"
+  width="1200"
+  height="610"
+  rx="20"
+  fill="#02060d"
+/>
+
+
+<!-- Outer border -->
+
+<rect
+  x="3"
+  y="3"
+  width="1194"
+  height="604"
+  rx="19"
+  fill="none"
+  stroke="url(#borderGradient)"
+  stroke-width="2"
+/>
+
+
+<!-- =====================================================
+     TERMINAL HEADER
+====================================================== -->
+
+<circle
+  cx="25"
+  cy="25"
+  r="7"
+  fill="#ff4d56"
+/>
+
+<circle
+  cx="48"
+  cy="25"
+  r="7"
+  fill="#ffbd2e"
+/>
+
+<circle
+  cx="71"
+  cy="25"
+  r="7"
+  fill="#28ca42"
+/>
+
+
+<text
+  x="600"
+  y="30"
+  text-anchor="middle"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="14"
+  font-weight="bold"
+>
+terminal@Vineeth1512:~$ ./profile --live
+</text>
+
+
+<text
+  x="1160"
+  y="30"
+  text-anchor="end"
+  fill="#ff3fc8"
+  font-family="monospace"
+  font-size="11"
+  font-weight="bold"
+>
+[ ONLINE ]
+</text>
+
+
+<!-- =====================================================
+     LEFT PANEL
+====================================================== -->
+
+<rect
+  x="25"
+  y="52"
+  width="430"
+  height="390"
+  rx="12"
+  fill="url(#panelGradient)"
+  stroke="#007b91"
+  stroke-width="1"
+/>
+
+
+<text
+  x="42"
+  y="76"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="12"
+  font-weight="bold"
+>
+&gt; VISUAL.INFO
+</text>
+
+
+<!-- Avatar container -->
+
+<rect
+  x="60"
+  y="95"
+  width="390"
+  height="320"
+  rx="10"
+  fill="#02060c"
+  stroke="#0b5067"
+  stroke-width="1"
+/>
+
+
+<!-- REAL GITHUB AVATAR -->
+
+<image
+  href="data:image/jpeg;base64,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"
+  x="60"
+  y="95"
+  width="390"
+  height="320"
+  preserveAspectRatio="xMidYMid slice"
+  clip-path="url(#avatarClip)"
+  filter="url(#avatarFilter)"
+/>
+
+
+<!-- Dot effect -->
+
+<rect
+  x="60"
+  y="95"
+  width="390"
+  height="320"
+  rx="10"
+  fill="url(#dots)"
+  clip-path="url(#avatarClip)"
+/>
+
+
+<!-- Scanline effect -->
+
+<rect
+  x="60"
+  y="95"
+  width="390"
+  height="320"
+  rx="10"
+  fill="url(#scanlines)"
+  clip-path="url(#avatarClip)"
+/>
+
+
+<!-- Moving scan -->
+
+<rect
+  x="60"
+  y="95"
+  width="390"
+  height="2"
+  fill="#00ffff"
+  opacity="0.65"
+  filter="url(#glow)"
+>
+
+  <animate
+    attributeName="y"
+    values="100;410;100"
+    dur="4s"
+    repeatCount="indefinite"
+  />
+
+</rect>
+
+
+<!-- =====================================================
+     RIGHT PANEL
+====================================================== -->
+
+<rect
+  x="475"
+  y="52"
+  width="700"
+  height="390"
+  rx="12"
+  fill="url(#panelGradient)"
+  stroke="#007b91"
+  stroke-width="1"
+/>
+
+
+<text
+  x="495"
+  y="76"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="12"
+  font-weight="bold"
+>
+&gt; PROFILE.INFO
+</text>
+
+
+<!-- Name -->
+
+<text
+  x="495"
+  y="110"
+  fill="#00ff7f"
+  font-family="monospace"
+  font-size="25"
+  font-weight="bold"
+  filter="url(#glow)"
+>
+Vineeth kumar
+</text>
+
+
+<!-- Role -->
+
+<text
+  x="495"
+  y="134"
+  fill="#d7e3ef"
+  font-family="monospace"
+  font-size="12"
+>
+Full Stack Developer
+<tspan fill="#00ff9c"> █</tspan>
+</text>
+
+
+<line
+  x1="495"
+  y1="150"
+  x2="1148"
+  y2="150"
+  stroke="#124357"
+/>
+
+
+<!-- =====================================================
+     BASIC INFORMATION
+====================================================== -->
+
+<text
+  x="495"
+  y="173"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="11"
+>
+Username
+</text>
+
+<text
+  x="610"
+  y="173"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="11"
+>
+: Vineeth1512
+</text>
+
+
+<text
+  x="495"
+  y="194"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="11"
+>
+Role
+</text>
+
+<text
+  x="610"
+  y="194"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="11"
+>
+: Full Stack Developer
+</text>
+
+
+<text
+  x="495"
+  y="215"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="11"
+>
+Location
+</text>
+
+<text
+  x="610"
+  y="215"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="11"
+>
+: Hyderabad
+</text>
+
+
+<text
+  x="495"
+  y="236"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="11"
+>
+Repositories
+</text>
+
+<text
+  x="610"
+  y="236"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="11"
+>
+: 107
+</text>
+
+
+<text
+  x="495"
+  y="257"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="11"
+>
+Followers
+</text>
+
+<text
+  x="610"
+  y="257"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="11"
+>
+: 5
+</text>
+
+
+<text
+  x="495"
+  y="278"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="11"
+>
+Following
+</text>
+
+<text
+  x="610"
+  y="278"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="11"
+>
+: 9
+</text>
+
+
+<!-- =====================================================
+     TECH STACK
+====================================================== -->
+
+<line
+  x1="495"
+  y1="294"
+  x2="1148"
+  y2="294"
+  stroke="#124357"
+/>
+
+
+<text
+  x="495"
+  y="316"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="12"
+  font-weight="bold"
+>
+&gt; TECH.STACK
+</text>
+
+
+<text
+  x="495"
+  y="338"
+  fill="#c084fc"
+  font-family="monospace"
+  font-size="10"
+>
+Core.Frontend
+</text>
+
+<text
+  x="610"
+  y="338"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="10"
+>
+: React • JavaScript • HTML • CSS
+</text>
+
+
+<text
+  x="495"
+  y="356"
+  fill="#c084fc"
+  font-family="monospace"
+  font-size="10"
+>
+Core.Backend
+</text>
+
+<text
+  x="610"
+  y="356"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="10"
+>
+: Java • Spring Boot • Node.js
+</text>
+
+
+<text
+  x="495"
+  y="374"
+  fill="#c084fc"
+  font-family="monospace"
+  font-size="10"
+>
+Core.Database
+</text>
+
+<text
+  x="610"
+  y="374"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="10"
+>
+: MongoDB • MySQL • Firebase
+</text>
+
+
+<text
+  x="495"
+  y="392"
+  fill="#c084fc"
+  font-family="monospace"
+  font-size="10"
+>
+Core.Languages
+</text>
+
+<text
+  x="610"
+  y="392"
+  fill="#e5edf5"
+  font-family="monospace"
+  font-size="10"
+>
+: JavaScript • HTML • Java • CSS • Python
+</text>
+
+
+<text
+  x="495"
+  y="416"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="9"
+>
+$ 👋 About Me Hi, I’m Vineeth 👨‍💻, a passionate Full Stack Developer with a
+</text>
+
+
+<!-- =====================================================
+     LIVE STATS
+====================================================== -->
+
+<rect
+  x="25"
+  y="460"
+  width="1150"
+  height="120"
+  rx="12"
+  fill="url(#panelGradient)"
+  stroke="#00b889"
+  stroke-width="1"
+/>
+
+
+<text
+  x="42"
+  y="484"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="12"
+  font-weight="bold"
+>
+&gt; LIVE.STATS
+</text>
+
+
+<!-- Repositories -->
+
+<text
+  x="75"
+  y="514"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="9"
+>
+PUBLIC.REPOS
+</text>
+
+<text
+  x="75"
+  y="540"
+  fill="#ffffff"
+  font-family="monospace"
+  font-size="20"
+  font-weight="bold"
+>
+107
+</text>
+
+
+<!-- Followers -->
+
+<text
+  x="290"
+  y="514"
+  fill="#00d9ff"
+  font-family="monospace"
+  font-size="9"
+>
+FOLLOWERS
+</text>
+
+<text
+  x="290"
+  y="540"
+  fill="#ffffff"
+  font-family="monospace"
+  font-size="20"
+  font-weight="bold"
+>
+5
+</text>
+
+
+<!-- Stars -->
+
+<text
+  x="500"
+  y="514"
+  fill="#ffd43b"
+  font-family="monospace"
+  font-size="9"
+>
+STARS
+</text>
+
+<text
+  x="500"
+  y="540"
+  fill="#ffffff"
+  font-family="monospace"
+  font-size="20"
+  font-weight="bold"
+>
+11
+</text>
+
+
+<!-- Forks -->
+
+<text
+  x="670"
+  y="514"
+  fill="#c084fc"
+  font-family="monospace"
+  font-size="9"
+>
+FORKS
+</text>
+
+<text
+  x="670"
+  y="540"
+  fill="#ffffff"
+  font-family="monospace"
+  font-size="20"
+  font-weight="bold"
+>
+0
+</text>
+
+
+<!-- Languages -->
+
+<text
+  x="835"
+  y="514"
+  fill="#ff4fd8"
+  font-family="monospace"
+  font-size="9"
+>
+LANGUAGES
+</text>
+
+<text
+  x="835"
+  y="540"
+  fill="#ffffff"
+  font-family="monospace"
+  font-size="10"
+>
+JavaScript • HTML • Java
+</text>
+
+
+<!-- Status -->
+
+<text
+  x="1050"
+  y="514"
+  fill="#39ff88"
+  font-family="monospace"
+  font-size="9"
+>
+STATUS
+</text>
+
+<text
+  x="1050"
+  y="540"
+  fill="#39ff88"
+  font-family="monospace"
+  font-size="15"
+  font-weight="bold"
+  filter="url(#glow)"
+>
+ACTIVE
+</text>
+
+
+<!-- =====================================================
+     TERMINAL FOOTER
+====================================================== -->
+
+<text
+  x="42"
+  y="564"
+  fill="#00ff9c"
+  font-family="monospace"
+  font-size="9"
+>
+$ live github data loaded • auto-generated by GitHub Actions
+</text>
+
+
+<!-- Blinking cursor -->
+
+<rect
+  x="1150"
+  y="556"
+  width="6"
+  height="10"
+  fill="#00ff9c"
+>
+
+  <animate
+    attributeName="opacity"
+    values="1;0;1"
+    dur="0.9s"
+    repeatCount="indefinite"
+  />
+
+</rect>
 
 </svg>
