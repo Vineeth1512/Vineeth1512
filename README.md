@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="https://vineeth-kumar-portfolio.netlify.app/">
+  <a href="https://vineeth-kumar-mudham-portfolio.netlify.app/">
     <img src="https://img.shields.io/badge/Portfolio-Visit%20My%20Portfolio-7C3AED?style=for-the-badge&logo=firefox&logoColor=white&labelColor=111827" />
   </a>
   <a href="https://www.linkedin.com/in/vineethkumar-mudham/">
