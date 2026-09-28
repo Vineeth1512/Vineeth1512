@@ -105,7 +105,7 @@
         <title>2025-10-18 · 0 contributions</title>
       </rect>
       <rect x="79" y="48" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#26a641">
         <title>2025-10-19 · 14 contributions</title>
       </rect>
       <rect x="79" y="65" width="14" height="14"
@@ -133,7 +133,7 @@
         <title>2025-10-25 · 0 contributions</title>
       </rect>
       <rect x="96" y="48" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#26a641">
         <title>2025-10-26 · 15 contributions</title>
       </rect>
       <rect x="96" y="65" width="14" height="14"
@@ -145,7 +145,7 @@
         <title>2025-10-28 · 5 contributions</title>
       </rect>
       <rect x="96" y="99" width="14" height="14"
-        rx="2" fill="#0e4429">
+        rx="2" fill="#006d32">
         <title>2025-10-29 · 8 contributions</title>
       </rect>
       <rect x="96" y="116" width="14" height="14"
@@ -165,11 +165,11 @@
         <title>2025-11-02 · 35 contributions</title>
       </rect>
       <rect x="113" y="65" width="14" height="14"
-        rx="2" fill="#26a641">
+        rx="2" fill="#39d353">
         <title>2025-11-03 · 20 contributions</title>
       </rect>
       <rect x="113" y="82" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#26a641">
         <title>2025-11-04 · 12 contributions</title>
       </rect>
       <rect x="113" y="99" width="14" height="14"
@@ -177,7 +177,7 @@
         <title>2025-11-05 · 4 contributions</title>
       </rect>
       <rect x="113" y="116" width="14" height="14"
-        rx="2" fill="#0e4429">
+        rx="2" fill="#006d32">
         <title>2025-11-06 · 7 contributions</title>
       </rect>
       <rect x="113" y="133" width="14" height="14"
@@ -269,7 +269,7 @@
         <title>2025-11-28 · 0 contributions</title>
       </rect>
       <rect x="164" y="150" width="14" height="14"
-        rx="2" fill="#26a641">
+        rx="2" fill="#39d353">
         <title>2025-11-29 · 18 contributions</title>
       </rect>
       <rect x="181" y="48" width="14" height="14"
@@ -289,7 +289,7 @@
         <title>2025-12-03 · 2 contributions</title>
       </rect>
       <rect x="181" y="116" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#26a641">
         <title>2025-12-04 · 14 contributions</title>
       </rect>
       <rect x="181" y="133" width="14" height="14"
@@ -341,7 +341,7 @@
         <title>2025-12-16 · 0 contributions</title>
       </rect>
       <rect x="215" y="99" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#26a641">
         <title>2025-12-17 · 15 contributions</title>
       </rect>
       <rect x="215" y="116" width="14" height="14"
@@ -549,7 +549,7 @@
         <title>2026-02-06 · 0 contributions</title>
       </rect>
       <rect x="334" y="150" width="14" height="14"
-        rx="2" fill="#0e4429">
+        rx="2" fill="#006d32">
         <title>2026-02-07 · 6 contributions</title>
       </rect>
       <rect x="351" y="48" width="14" height="14"
@@ -597,7 +597,7 @@
         <title>2026-02-18 · 0 contributions</title>
       </rect>
       <rect x="368" y="116" width="14" height="14"
-        rx="2" fill="#0e4429">
+        rx="2" fill="#006d32">
         <title>2026-02-19 · 7 contributions</title>
       </rect>
       <rect x="368" y="133" width="14" height="14"
@@ -629,7 +629,7 @@
         <title>2026-02-26 · 0 contributions</title>
       </rect>
       <rect x="385" y="133" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#26a641">
         <title>2026-02-27 · 13 contributions</title>
       </rect>
       <rect x="385" y="150" width="14" height="14"
@@ -1479,6 +1479,10 @@
       <rect x="912" y="48" width="14" height="14"
         rx="2" fill="#161b22">
         <title>2026-09-27 · 0 contributions</title>
+      </rect>
+      <rect x="912" y="65" width="14" height="14"
+        rx="2" fill="#161b22">
+        <title>2026-09-28 · 0 contributions</title>
       </rect>
   </g>
 
