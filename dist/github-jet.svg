@@ -21,7 +21,7 @@
   <g>
     
       <rect x="28" y="48" width="14" height="14"
-        rx="2" fill="#26a641">
+        rx="2" fill="#39d353">
         <title>2025-10-26 · 15 contributions</title>
       </rect>
       <rect x="28" y="65" width="14" height="14"
@@ -29,7 +29,7 @@
         <title>2025-10-27 · 2 contributions</title>
       </rect>
       <rect x="28" y="82" width="14" height="14"
-        rx="2" fill="#0e4429">
+        rx="2" fill="#006d32">
         <title>2025-10-28 · 5 contributions</title>
       </rect>
       <rect x="28" y="99" width="14" height="14"
@@ -45,7 +45,7 @@
         <title>2025-10-31 · 1 contributions</title>
       </rect>
       <rect x="28" y="150" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#26a641">
         <title>2025-11-01 · 10 contributions</title>
       </rect>
       <rect x="45" y="48" width="14" height="14"
@@ -177,7 +177,7 @@
         <title>2025-12-03 · 2 contributions</title>
       </rect>
       <rect x="113" y="116" width="14" height="14"
-        rx="2" fill="#26a641">
+        rx="2" fill="#39d353">
         <title>2025-12-04 · 14 contributions</title>
       </rect>
       <rect x="113" y="133" width="14" height="14"
@@ -229,7 +229,7 @@
         <title>2025-12-16 · 0 contributions</title>
       </rect>
       <rect x="147" y="99" width="14" height="14"
-        rx="2" fill="#26a641">
+        rx="2" fill="#39d353">
         <title>2025-12-17 · 15 contributions</title>
       </rect>
       <rect x="147" y="116" width="14" height="14"
@@ -1209,7 +1209,7 @@
         <title>2026-08-18 · 3 contributions</title>
       </rect>
       <rect x="742" y="99" width="14" height="14"
-        rx="2" fill="#0e4429">
+        rx="2" fill="#006d32">
         <title>2026-08-19 · 5 contributions</title>
       </rect>
       <rect x="742" y="116" width="14" height="14"
@@ -1265,7 +1265,7 @@
         <title>2026-09-01 · 0 contributions</title>
       </rect>
       <rect x="776" y="99" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#26a641">
         <title>2026-09-02 · 10 contributions</title>
       </rect>
       <rect x="776" y="116" width="14" height="14"
@@ -1479,6 +1479,10 @@
       <rect x="912" y="48" width="14" height="14"
         rx="2" fill="#161b22">
         <title>2026-10-25 · 0 contributions</title>
+      </rect>
+      <rect x="912" y="65" width="14" height="14"
+        rx="2" fill="#161b22">
+        <title>2026-10-26 · 0 contributions</title>
       </rect>
   </g>
 
