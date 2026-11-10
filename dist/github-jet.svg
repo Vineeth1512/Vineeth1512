@@ -101,7 +101,7 @@
         <title>2025-11-28 · 0 contributions</title>
       </rect>
       <rect x="62" y="150" width="14" height="14"
-        rx="2" fill="#39d353">
+        rx="2" fill="#26a641">
         <title>2025-11-29 · 18 contributions</title>
       </rect>
       <rect x="79" y="48" width="14" height="14"
@@ -121,7 +121,7 @@
         <title>2025-12-03 · 2 contributions</title>
       </rect>
       <rect x="79" y="116" width="14" height="14"
-        rx="2" fill="#39d353">
+        rx="2" fill="#26a641">
         <title>2025-12-04 · 14 contributions</title>
       </rect>
       <rect x="79" y="133" width="14" height="14"
@@ -137,7 +137,7 @@
         <title>2025-12-07 · 1 contributions</title>
       </rect>
       <rect x="96" y="65" width="14" height="14"
-        rx="2" fill="#26a641">
+        rx="2" fill="#006d32">
         <title>2025-12-08 · 9 contributions</title>
       </rect>
       <rect x="96" y="82" width="14" height="14"
@@ -173,7 +173,7 @@
         <title>2025-12-16 · 0 contributions</title>
       </rect>
       <rect x="113" y="99" width="14" height="14"
-        rx="2" fill="#39d353">
+        rx="2" fill="#26a641">
         <title>2025-12-17 · 15 contributions</title>
       </rect>
       <rect x="113" y="116" width="14" height="14"
@@ -381,7 +381,7 @@
         <title>2026-02-06 · 0 contributions</title>
       </rect>
       <rect x="232" y="150" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#0e4429">
         <title>2026-02-07 · 6 contributions</title>
       </rect>
       <rect x="249" y="48" width="14" height="14"
@@ -461,7 +461,7 @@
         <title>2026-02-26 · 0 contributions</title>
       </rect>
       <rect x="283" y="133" width="14" height="14"
-        rx="2" fill="#39d353">
+        rx="2" fill="#006d32">
         <title>2026-02-27 · 13 contributions</title>
       </rect>
       <rect x="283" y="150" width="14" height="14"
@@ -1125,7 +1125,7 @@
         <title>2026-08-11 · 3 contributions</title>
       </rect>
       <rect x="691" y="99" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#0e4429">
         <title>2026-08-12 · 4 contributions</title>
       </rect>
       <rect x="691" y="116" width="14" height="14"
@@ -1153,7 +1153,7 @@
         <title>2026-08-18 · 3 contributions</title>
       </rect>
       <rect x="708" y="99" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#0e4429">
         <title>2026-08-19 · 5 contributions</title>
       </rect>
       <rect x="708" y="116" width="14" height="14"
@@ -1173,7 +1173,7 @@
         <title>2026-08-23 · 0 contributions</title>
       </rect>
       <rect x="725" y="65" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#0e4429">
         <title>2026-08-24 · 4 contributions</title>
       </rect>
       <rect x="725" y="82" width="14" height="14"
@@ -1209,7 +1209,7 @@
         <title>2026-09-01 · 0 contributions</title>
       </rect>
       <rect x="742" y="99" width="14" height="14"
-        rx="2" fill="#26a641">
+        rx="2" fill="#006d32">
         <title>2026-09-02 · 10 contributions</title>
       </rect>
       <rect x="742" y="116" width="14" height="14"
@@ -1285,11 +1285,11 @@
         <title>2026-09-20 · 0 contributions</title>
       </rect>
       <rect x="793" y="65" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#0e4429">
         <title>2026-09-21 · 4 contributions</title>
       </rect>
       <rect x="793" y="82" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#0e4429">
         <title>2026-09-22 · 4 contributions</title>
       </rect>
       <rect x="793" y="99" width="14" height="14"
@@ -1317,7 +1317,7 @@
         <title>2026-09-28 · 0 contributions</title>
       </rect>
       <rect x="810" y="82" width="14" height="14"
-        rx="2" fill="#006d32">
+        rx="2" fill="#0e4429">
         <title>2026-09-29 · 6 contributions</title>
       </rect>
       <rect x="810" y="99" width="14" height="14"
@@ -1484,6 +1484,10 @@
         rx="2" fill="#161b22">
         <title>2026-11-09 · 0 contributions</title>
       </rect>
+      <rect x="912" y="82" width="14" height="14"
+        rx="2" fill="#39d353">
+        <title>2026-11-10 · 26 contributions</title>
+      </rect>
   </g>
 
   <g filter="url(#glow)" id="jet">
@@ -1494,7 +1498,7 @@
       <circle cx="4" cy="0" r="2" fill="#f8fafc"/>
       <animateMotion dur="12s" repeatCount="indefinite" rotate="auto" path="
   M -55 25
-  L 62 150
+  L 912 82
   L 1009 192
   L -55 25
 "/>
@@ -1504,122 +1508,122 @@
   <g id="effects">
     
     <g>
-      <circle cx="69" cy="157" r="3" fill="#ef4444" opacity="0">
+      <circle cx="919" cy="89" r="3" fill="#ef4444" opacity="0">
         <animate attributeName="r" values="3;8;18" begin="2s" dur=".55s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;.0" begin="2s" dur=".55s" fill="freeze"/>
       </circle>
-      <circle cx="69" cy="157" r="2" fill="#facc15" opacity="0">
+      <circle cx="919" cy="89" r="2" fill="#facc15" opacity="0">
         <animate attributeName="r" values="2;7;2" begin="2s" dur=".42s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;0" begin="2s" dur=".42s" fill="freeze"/>
       </circle>
       <g opacity="0">
-        <line x1="58" y1="157" x2="80" y2="157" stroke="#facc15" stroke-width="2"/>
-        <line x1="69" y1="146" x2="69" y2="168" stroke="#facc15" stroke-width="2"/>
+        <line x1="908" y1="89" x2="930" y2="89" stroke="#facc15" stroke-width="2"/>
+        <line x1="919" y1="78" x2="919" y2="100" stroke="#facc15" stroke-width="2"/>
         <animate attributeName="opacity" values="0;1;0" begin="2s" dur=".42s" fill="freeze"/>
       </g>
     </g>
     <g>
-      <circle cx="120" cy="106" r="3" fill="#ef4444" opacity="0">
+      <circle cx="69" cy="157" r="3" fill="#ef4444" opacity="0">
         <animate attributeName="r" values="3;8;18" begin="3.55s" dur=".55s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;.0" begin="3.55s" dur=".55s" fill="freeze"/>
       </circle>
-      <circle cx="120" cy="106" r="2" fill="#facc15" opacity="0">
+      <circle cx="69" cy="157" r="2" fill="#facc15" opacity="0">
         <animate attributeName="r" values="2;7;2" begin="3.55s" dur=".42s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;0" begin="3.55s" dur=".42s" fill="freeze"/>
       </circle>
       <g opacity="0">
-        <line x1="109" y1="106" x2="131" y2="106" stroke="#facc15" stroke-width="2"/>
-        <line x1="120" y1="95" x2="120" y2="117" stroke="#facc15" stroke-width="2"/>
+        <line x1="58" y1="157" x2="80" y2="157" stroke="#facc15" stroke-width="2"/>
+        <line x1="69" y1="146" x2="69" y2="168" stroke="#facc15" stroke-width="2"/>
         <animate attributeName="opacity" values="0;1;0" begin="3.55s" dur=".42s" fill="freeze"/>
       </g>
     </g>
     <g>
-      <circle cx="86" cy="123" r="3" fill="#ef4444" opacity="0">
+      <circle cx="120" cy="106" r="3" fill="#ef4444" opacity="0">
         <animate attributeName="r" values="3;8;18" begin="5.1s" dur=".55s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;.0" begin="5.1s" dur=".55s" fill="freeze"/>
       </circle>
-      <circle cx="86" cy="123" r="2" fill="#facc15" opacity="0">
+      <circle cx="120" cy="106" r="2" fill="#facc15" opacity="0">
         <animate attributeName="r" values="2;7;2" begin="5.1s" dur=".42s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;0" begin="5.1s" dur=".42s" fill="freeze"/>
       </circle>
       <g opacity="0">
-        <line x1="75" y1="123" x2="97" y2="123" stroke="#facc15" stroke-width="2"/>
-        <line x1="86" y1="112" x2="86" y2="134" stroke="#facc15" stroke-width="2"/>
+        <line x1="109" y1="106" x2="131" y2="106" stroke="#facc15" stroke-width="2"/>
+        <line x1="120" y1="95" x2="120" y2="117" stroke="#facc15" stroke-width="2"/>
         <animate attributeName="opacity" values="0;1;0" begin="5.1s" dur=".42s" fill="freeze"/>
       </g>
     </g>
     <g>
-      <circle cx="290" cy="140" r="3" fill="#ef4444" opacity="0">
+      <circle cx="86" cy="123" r="3" fill="#ef4444" opacity="0">
         <animate attributeName="r" values="3;8;18" begin="6.65s" dur=".55s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;.0" begin="6.65s" dur=".55s" fill="freeze"/>
       </circle>
-      <circle cx="290" cy="140" r="2" fill="#facc15" opacity="0">
+      <circle cx="86" cy="123" r="2" fill="#facc15" opacity="0">
         <animate attributeName="r" values="2;7;2" begin="6.65s" dur=".42s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;0" begin="6.65s" dur=".42s" fill="freeze"/>
       </circle>
       <g opacity="0">
-        <line x1="279" y1="140" x2="301" y2="140" stroke="#facc15" stroke-width="2"/>
-        <line x1="290" y1="129" x2="290" y2="151" stroke="#facc15" stroke-width="2"/>
+        <line x1="75" y1="123" x2="97" y2="123" stroke="#facc15" stroke-width="2"/>
+        <line x1="86" y1="112" x2="86" y2="134" stroke="#facc15" stroke-width="2"/>
         <animate attributeName="opacity" values="0;1;0" begin="6.65s" dur=".42s" fill="freeze"/>
       </g>
     </g>
     <g>
-      <circle cx="749" cy="106" r="3" fill="#ef4444" opacity="0">
+      <circle cx="290" cy="140" r="3" fill="#ef4444" opacity="0">
         <animate attributeName="r" values="3;8;18" begin="8.2s" dur=".55s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;.0" begin="8.2s" dur=".55s" fill="freeze"/>
       </circle>
-      <circle cx="749" cy="106" r="2" fill="#facc15" opacity="0">
+      <circle cx="290" cy="140" r="2" fill="#facc15" opacity="0">
         <animate attributeName="r" values="2;7;2" begin="8.2s" dur=".42s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;0" begin="8.2s" dur=".42s" fill="freeze"/>
       </circle>
       <g opacity="0">
-        <line x1="738" y1="106" x2="760" y2="106" stroke="#facc15" stroke-width="2"/>
-        <line x1="749" y1="95" x2="749" y2="117" stroke="#facc15" stroke-width="2"/>
+        <line x1="279" y1="140" x2="301" y2="140" stroke="#facc15" stroke-width="2"/>
+        <line x1="290" y1="129" x2="290" y2="151" stroke="#facc15" stroke-width="2"/>
         <animate attributeName="opacity" values="0;1;0" begin="8.2s" dur=".42s" fill="freeze"/>
       </g>
     </g>
     <g>
-      <circle cx="103" cy="72" r="3" fill="#ef4444" opacity="0">
+      <circle cx="749" cy="106" r="3" fill="#ef4444" opacity="0">
         <animate attributeName="r" values="3;8;18" begin="9.75s" dur=".55s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;.0" begin="9.75s" dur=".55s" fill="freeze"/>
       </circle>
-      <circle cx="103" cy="72" r="2" fill="#facc15" opacity="0">
+      <circle cx="749" cy="106" r="2" fill="#facc15" opacity="0">
         <animate attributeName="r" values="2;7;2" begin="9.75s" dur=".42s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;0" begin="9.75s" dur=".42s" fill="freeze"/>
       </circle>
       <g opacity="0">
-        <line x1="92" y1="72" x2="114" y2="72" stroke="#facc15" stroke-width="2"/>
-        <line x1="103" y1="61" x2="103" y2="83" stroke="#facc15" stroke-width="2"/>
+        <line x1="738" y1="106" x2="760" y2="106" stroke="#facc15" stroke-width="2"/>
+        <line x1="749" y1="95" x2="749" y2="117" stroke="#facc15" stroke-width="2"/>
         <animate attributeName="opacity" values="0;1;0" begin="9.75s" dur=".42s" fill="freeze"/>
       </g>
     </g>
     <g>
-      <circle cx="273" cy="123" r="3" fill="#ef4444" opacity="0">
+      <circle cx="103" cy="72" r="3" fill="#ef4444" opacity="0">
         <animate attributeName="r" values="3;8;18" begin="11.3s" dur=".55s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;.0" begin="11.3s" dur=".55s" fill="freeze"/>
       </circle>
-      <circle cx="273" cy="123" r="2" fill="#facc15" opacity="0">
+      <circle cx="103" cy="72" r="2" fill="#facc15" opacity="0">
         <animate attributeName="r" values="2;7;2" begin="11.3s" dur=".42s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;0" begin="11.3s" dur=".42s" fill="freeze"/>
       </circle>
       <g opacity="0">
-        <line x1="262" y1="123" x2="284" y2="123" stroke="#facc15" stroke-width="2"/>
-        <line x1="273" y1="112" x2="273" y2="134" stroke="#facc15" stroke-width="2"/>
+        <line x1="92" y1="72" x2="114" y2="72" stroke="#facc15" stroke-width="2"/>
+        <line x1="103" y1="61" x2="103" y2="83" stroke="#facc15" stroke-width="2"/>
         <animate attributeName="opacity" values="0;1;0" begin="11.3s" dur=".42s" fill="freeze"/>
       </g>
     </g>
     <g>
-      <circle cx="239" cy="157" r="3" fill="#ef4444" opacity="0">
+      <circle cx="273" cy="123" r="3" fill="#ef4444" opacity="0">
         <animate attributeName="r" values="3;8;18" begin="12.85s" dur=".55s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;.0" begin="12.85s" dur=".55s" fill="freeze"/>
       </circle>
-      <circle cx="239" cy="157" r="2" fill="#facc15" opacity="0">
+      <circle cx="273" cy="123" r="2" fill="#facc15" opacity="0">
         <animate attributeName="r" values="2;7;2" begin="12.85s" dur=".42s" fill="freeze"/>
         <animate attributeName="opacity" values="0;1;0" begin="12.85s" dur=".42s" fill="freeze"/>
       </circle>
       <g opacity="0">
-        <line x1="228" y1="157" x2="250" y2="157" stroke="#facc15" stroke-width="2"/>
-        <line x1="239" y1="146" x2="239" y2="168" stroke="#facc15" stroke-width="2"/>
+        <line x1="262" y1="123" x2="284" y2="123" stroke="#facc15" stroke-width="2"/>
+        <line x1="273" y1="112" x2="273" y2="134" stroke="#facc15" stroke-width="2"/>
         <animate attributeName="opacity" values="0;1;0" begin="12.85s" dur=".42s" fill="freeze"/>
       </g>
     </g>
