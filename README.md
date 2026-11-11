@@ -325,7 +325,7 @@ System Design  ██████████░░░░░░░░░░░�
   <a href="https://www.linkedin.com/in/vineethkumar-mudham/">
     <img src="https://img.shields.io/badge/Let's%20Connect-LinkedIn-4F46E5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=111827" />
   </a>
-  <a href="https://vineeth-kumar-portfolio.netlify.app/">
+  <a href="https://vineeth-kumar-mudham-portfolio.netlify.app/">
     <img src="https://img.shields.io/badge/Visit%20My%20Portfolio-7C3AED?style=for-the-badge&logo=firefox&logoColor=white&labelColor=111827" />
   </a>
   <a href="https://github.com/Vineeth1512">
